@@ -1,0 +1,187 @@
+version: 0.0.1
+
+
+game: dndspells
+short name: magicspell
+full name: dungeonsanddragons
+icon: cardsample.png
+
+card background: white 
+card width: 1453
+card height: 2043
+card dpi: 150
+
+version: 2019-11-03
+depends on: dndspells.mse-game 2019-11-03
+
+
+
+card style:
+
+	spellschool:
+		left:	0
+		top:	0
+		width:	1453
+		height:	2043
+		z index: -1
+		render style: image
+		popup style: in place
+		choice images:
+			abjuration: abjuration.png
+			abjurationritual: abjurationritual.png
+			conjuration: conjuration.png
+			conjurationritual: conjurationritual.png
+			divination: divination.png
+			divinationritual: divinationritual.png
+			enchantment: enchantment.png
+			enchantmentritual: enchantmentritual.png
+			evocation: evocation.png
+			evocationritual: evocationritual.png
+			illusion: illusion.png
+			illusionritual: illusionritual.png
+			necromancy: necromancy.png
+			necromancyritual: necromancyritual.png
+			transmutation: transmutation.png
+			transmutationritual: transmutationritual.png
+
+	concentration:
+		left:	1178
+		top:	75
+		width:	200
+		height:	200
+		z index: -1
+		render style: image
+		popup style: in place
+		choice images:
+			no_concentration: no_concentration.png
+			concentration: concentration.png
+
+
+	spellname:  
+		top: 100
+		left: 100
+		width: 1000
+		height: 140
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna Bold
+			size: 120
+			color: rgb(0,0,0)
+			scale down to: 48
+
+	spelllevel:  
+		top: 60
+		left: 1260
+		width: 120
+		height: 100
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 48
+
+	spelltext:         
+		top: 600
+		left: 100
+		width: 1253
+		height: 1225
+		alignment: left top shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 64
+			color: rgb(0,0,0)
+			scale down to: 32
+
+	spellrange:          
+		top: 310
+		left: 375
+		width: 450
+		height: 90
+		alignment: middle left shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 32
+
+	spellduration:          
+		top: 400
+		left: 475
+		width: 350
+		height: 90
+		alignment: middle left shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 32
+
+
+	spellcasttime:          
+		top: 490
+		left: 475
+		width: 350
+		height: 90
+		alignment: middle left shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 32
+
+
+	spellcomponents:          
+		top: 400
+		left: 875
+		width: 500
+		height: 180
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 32
+
+
+
+
+
+
+
+
+
+
+
+
+extra card field:
+	type: choice
+	name: bgimage
+	editable: false
+	show statistics: false
+	save value: false
+	choice:
+
+
+extra card field:
+	type: choice
+	name: fgimage
+	editable: false
+	show statistics: false
+	save value: false
+	choice: abjuration
+
+extra card field:
+	type: color
+	name: bgcolor
+	editable: false
+	show statistics: false
+	save value: false
+

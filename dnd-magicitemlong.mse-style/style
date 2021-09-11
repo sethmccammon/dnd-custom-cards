@@ -1,0 +1,106 @@
+version: 0.0.1
+
+
+game: dnd
+short name: MagicItemLong
+full name: dungeonsanddragons
+icon: cardsample.png
+
+card background: white 
+card width: 1453
+card height: 3527
+card dpi: 150
+
+version: 2019-11-03
+depends on: dnd.mse-game 2019-11-03
+
+
+
+card style: 
+	item type:
+		left:	0
+		top:	0
+		width:	1453
+		height:	3527
+		z index: -1
+		render style: image
+		popup style: in place
+		choice images:
+			default:	           cardfront_long.png
+			attuned:			   cardfront_long_attuned.png
+
+	itemname:
+               
+		top: 100
+		left: 240
+		width: 973
+		height: 120
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna
+			size: 72
+			color: rgb(0,0,0)
+			scale down to: 48
+
+	itemtypeline:
+               
+		top: 240
+		left: 240
+		width: 973
+		height: 120
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna Italic
+			size: 40
+			color: rgb(0,0,0)
+			scale down to: 32
+
+	itemtext:
+               
+		top: 1300
+		left: 140
+		width: 1173
+		height: 2100
+		alignment: middle center shrink-overflow
+		z index: 0
+		font:
+			name: Vecna Bold
+			size: 48
+			color: rgb(0,0,0)
+			scale down to: 32
+
+	itemimage:
+		left:	140
+		top:	460
+		width:	1173
+		height: 680
+		z index: 1
+		mask:
+			imagemask.png
+
+extra card field:
+	type: choice
+	name: bgimage
+	editable: false
+	show statistics: false
+	save value: false
+	choice:
+
+
+extra card field:
+	type: choice
+	name: fgimage
+	editable: false
+	show statistics: false
+	save value: false
+	choice: default
+
+extra card field:
+	type: color
+	name: bgcolor
+	editable: false
+	show statistics: false
+	save value: false
+

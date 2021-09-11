@@ -1,0 +1,107 @@
+mse version: 0.1.1
+
+short name: dnd
+full name: dungeonsanddragons
+icon: icon.png
+position hint: 26
+
+version: 2019-11-03
+
+
+init script:
+	# Process the name for sorting rules
+	sort_name :=
+		# Remove "The", "A", and "And" at the beginning
+		replace@(match: "^(The|An?) ", replace: "") +
+		# Remove commas and apostrophes
+		replace@(match: "(,|'|’)", replace: "") +
+		# Remove bold and italic tags
+		replace@(match: "(<b>|<i>|</b>|</i>)", replace: "") +
+		# Make lowercase
+		to_lower
+
+set field:
+	type: text
+	name: set title
+	identifying: true
+set field:
+	type: text
+	name: description
+	multi line: true
+set field:
+	type: text
+	name: artist
+set field:
+	type: text
+	name: copyright
+set field:
+	type: boolean
+	name: automatic card numbers
+	initial: no
+	description: Should card numbers be shown on the cards?
+
+card field:
+	type: choice
+	name: item type
+	initial: default
+	choice: default
+	choice: attuned
+
+#card field:
+#	type: text
+#	name: itemname
+#	identifying: true
+#	description: Item Name
+#	identifying: true
+#	script: to_upper(value)
+#	show statistics: false
+#	card list visible: true
+#	card list column: 1
+#	card list width: 150
+#	card list name: Name
+
+card field:
+	type: text
+	name: itemname
+	identifying: true
+	show statistics: false
+	card list visible: true
+	card list column: 1
+	card list width: 150
+	description: The name of the card
+
+card field:
+	type: text
+	name: itemtext
+	description: Item Text
+	multi line: true
+
+card field:
+	type: text
+	name: itemtypeline
+	description: Item Typeline
+
+card field:
+	type: image
+	name: itemimage
+	show statistics: false
+	description: The image of the card
+
+card field:
+	type: text
+	name: card number
+	save value: false
+	script:
+		position(
+			of: card
+			in: set
+			order_by: { sort_name(card.itemname) }
+		) + 1
+		+ "/" +
+		number_of_items(in: set)
+	card list visible: true
+	card list column: 10
+	card list width: 50
+	card list name: #
+	editable: false
+	show statistics: false
